@@ -5,11 +5,11 @@
 <title></title>
 <script>
 window.onload=function(){ with (new XMLHttpRequest()) {
-  onreadystatechange=cb; open('GET','myCSVfile.csv',true); responseType='text';send();
+  onreadystatechange=cb; open('GET','table.csv',true); responseType='text';send();
 }}
 function cb(){if(this.readyState===4)document.getElementById('main')
                                              .innerHTML=tbl(this.responseText); }
-function tbl(csv){ // do whatever is necessary to create your table here ...
+function tbl(csv){ 
  return csv.split('\n')
            .map(function(tr,i){return '<tr><td>'
                                      +tr.replace(/\t/g,'</td><td>')
@@ -18,7 +18,7 @@ function tbl(csv){ // do whatever is necessary to create your table here ...
 </script>
 </head>
 <body>
-<h2>Hey, this is my fabulous "dynamic" html page!</h2>
+<h2>Word Play!</h2>
 <table id="main"></table>
 </body>
 </html>
